@@ -16,7 +16,13 @@
 
 .game{
 	padding: 2%;
-	border: navy;
-	background-color: white;
+	border: solid black 2px;
+	background-color: red;
 	width: 45%;
+}
+body{background-color: green;}
+
+.score{
+	padding: 1%;
+	
 }
