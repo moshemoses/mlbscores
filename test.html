@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title> MLB Scoreboard </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+setInterval(loadDoc, 3000);
+
+
+      function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    var homer = this.responseText
+    var homer1 = JSON.parse(homer)
+	var away
+	//var test123 = homer1.data.games.game[i].away_team_name
+	var i
+	for(i = 0; i < homer1.data.games.game.length; i++){
+//away += "<br> away team" + " " + i + " " + homer1.data.games.game[i].away_team_name + " - " + homer1.data.games.game[i].linescore.r.away + "<br> home team" + " " + i + " " + homer1.data.games.game[i].home_team_name + " - " + homer1.data.games.game[i].linescore.r.home
+
+away+="<div class='game'><div class='team'> <div class='team_name'> " + homer1.data.games.game[i].away_team_name +   " </div> <div class='score'>   " + homer1.data.games.game[i].linescore.r.away +" </div></div><div class='team'><div class='team_name'> " +homer1.data.games.game[i].home_team_name + " </div><div class='score'> "+homer1.data.games.game[i].linescore.r.home + " </div></div></div><br> "
+
+
+
+
+
+
+
+
+
+}
+
+//var score  = homer1.data.games.game[i].linescore.r.away  
+ document.getElementById("gamebox").innerHTML = away
+document.getElementById("scoretest").innerHTML = Date.now()
+
+    
+}
+  };
+  xhttp.open("GET", "http://gd2.mlb.com/components/game/mlb/year_2018/month_06/day_20/master_scoreboard.json", true);
+  xhttp.send();
+
+      }
+      
+    </script>
+  </head>
+  <body onload="loadDoc()" >
+    
+    <div id = scoretest></div>
+    
+
+    <div id=gamebox> <div>
+    
+   
+    
+    
+    
+   
+
+
+    
+  </body>
+  
+</html>

@@ -1,0 +1,22 @@
+#gamebox{
+  display: flex;
+  
+  background-color: gray;
+  flex-wrap: wrap;
+  
+}
+
+.team{
+  display: flex;
+  flex-direction: row;
+  
+  
+  
+}
+
+.game{
+	padding: 2%;
+	border: navy;
+	background-color: white;
+	width: 45%;
+}
